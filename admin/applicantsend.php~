@@ -1,0 +1,15 @@
+<?php
+   include("model.php");
+   $model=new model;
+	$name=$_POST['name'];
+	$id=$_POST['id'];
+	$jid=$_POST['jid'];
+	$date=$_POST['date'];
+	$email=$_POST['to'];
+	$job=$_POST['job'];
+	//$url=$this->createUrl("applicant/interview",array("id"=>$id,"jid"=>$jid,"status"=>"Email sent successfully"));
+	//echo $model->sendEmail($name,$email,$job,$date);
+	echo $model-> sendEmail2($name,$email,$job,$date);
+	//$this->redirect($url);
+	header("Location: jobs.php");
+?>

@@ -1,0 +1,67 @@
+<?php
+include("header.php");
+$id=$_REQUEST['id'];
+$data=$model->getJob($id);
+$q=$model->getQualificationsNeeded($id);
+?>
+<div class="signup-page-main">
+     <div class="signup-main">  	
+    	 <div class="signup-head">
+<h1>View Job #<?php echo $data[0]['title']; ?></h1>
+</div>
+<?php /*$this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+		//'id',
+		'title',
+		'description',
+		'level',
+		'created',
+		'experience',
+	),
+));*/ ?>
+<table class="table table-stripped">
+<tr>
+<td>Title</td>
+<td><?php echo $data[0]['title']; ?></td>
+</tr>
+<td>Description</td>
+<td><?php echo $data[0]['description']; ?></td>
+</tr>
+<td>Level</td>
+<td><?php echo $data[0]['level']; ?></td>
+</tr>
+<td>Added On</td>
+<td><?php echo $model->dateFormater($data[0]['created']); ?></td>
+</tr>
+<td>Experience</td>
+<td><?php echo $data[0]['experience']; ?></td>
+</tr>
+</table>
+<h2>Qualifications Needed</h2>
+<table class="table">
+<thead>
+<tr>
+<th>Title</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<?php
+$count=count($q);
+for($x=0;$x<$count;$x++) {
+	?>
+	<tr>
+	<td><?php echo $q[$x]['name']; ?></td>
+	<td><?php echo $q[$x]['description']; ?></td>
+	</tr>
+	<?php
+	}
+?>
+</tbody>
+</table>
+</div>
+</div>
+<?php
+include("footer.php");
+?>

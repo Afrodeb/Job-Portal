@@ -1,0 +1,44 @@
+<?php
+include("header.php");
+$data=$model->getQualifications();
+?>
+<!--<div class="signup-page-main">
+     <div class="signup-main">  	
+    	 <div class="signup-head">
+				<h1>Qualifications</h1>
+			</div>
+
+<table class="table">
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<?php
+$count=count($data);
+for($x=0;$x<$count;$x++) {
+$update="qualificationsupdate.php?id=".$data[$x]['id'];
+?>
+<tr>
+<td>
+<?php
+echo $data[$x]['name'];
+?>
+</td>
+<td>
+<?php
+echo $data[$x]['description'];
+?>
+</td>
+
+</tr>
+<?php
+}
+?>
+</tbody>
+</table>
+
+</div>
+</div>-->
